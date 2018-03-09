@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Demo1快速入门 -->	
+	
+	<!-- 通过一个<bean>标签设置累的信息，通过id属性为类起了个标识 -->
+	<!-- <bean id="userService" class="cn.itcast.spring.Demo1.HelloServiceImpl"> -->
+		<!-- 使用<property>注入属性 -->
+		<!-- <property name="info" value="杨"></property>
+	</bean>  -->
+	 
+	<!-- Demo2Bean的实例化 -->
+	
+	<!-- 默认就是使用无参数的构造方法的实例方式 -->
+	 <!-- <bean name="bean1" class="cn.itcast.spring.Demo2.Bean1"></bean>  -->
+	
+	<!-- 使用静态工厂的实例方式 -->
+	<!-- <bean id="bean2" class="cn.itcast.spring.Demo2.Bean2Factory" factory-method="getBean2"></bean> -->
+	
+	<!-- 使用实例工厂实例化 -->
+	<!-- <bean id="bean3" factory-bean="bean3Factory" factory-method="getBean3"></bean>
+	<bean id="bean3Factory" class="cn.itcast.spring.Demo2.Bean3Factory"></bean> -->
+	
+	<!-- Demo3Bean的作用范围 -->
+	<!-- <bean id="customer" class="cn.itcast.spring.Demo3.Customer" scope="prototype"></bean>
+	<bean id="product" class="cn.itcast.spring.Demo3.Product" init-method="setup" destroy-method="teardown">
+		<property name="name" value="空调"></property>
+	</bean> -->
+	
+	<!-- Demo4Bean的生命周期 -->
+	
+	<!--  <bean id="customerService" class="cn.itcast.spring.Demo4.CustomerServiceImpl" init-method="setup" destroy-method="teardown"> 
+		<property name="name" value="itcast"></property>
+	</bean>
+	
+	<bean class="cn.itcast.spring.Demo4.MyBeanPostProcessor"></bean> --> 
+	
+	<!-- Demo5Bean的属性注入 -->
+	
+	<!-- 构造方法的属性注入 -->
+	<!-- <bean id="car" class="cn.itcast.spring.Demo5.Car"> -->
+	 	<!-- <constructor-arg name="name" value="宝马"></constructor-arg>
+	 	<constructor-arg name="price" value="1000000"></constructor-arg> -->
+	 	<!-- <constructor-arg index="0" type="java.lang.String" value="宝马"></constructor-arg>
+	 	<constructor-arg index="1" type="java.lang.Double" value="1000000"></constructor-arg>
+	</bean> -->
+
+	<!-- <bean id="car2" class="cn.itcast.spring.Demo5.Car2">
+		<property name="name" value="保时捷"></property>
+		<property name="price" value="5000000"></property>
+	</bean> -->
+	
+	<!-- <bean id="car2" class="cn.itcast.spring.Demo5.Car2" p:name="保时捷" p:price="5000000"></bean> -->
+
+	 <bean id="car2" class="cn.itcast.spring.Demo5.Car2">
+		<property name="name" value="#{'大众'}"></property>
+		<property name="price" value="#{'120000'}"></property>
+	</bean> 
+	
+	<!-- <bean id="person" class="cn.itcast.spring.Demo5.Person">
+		<property name="name" value="任童"></property>
+		<property name="car2" ref="car2"></property>
+	</bean> -->
+	
+	<!-- <bean id="person" class="cn.itcast.spring.Demo5.Person" p:name="任童" p:car2-ref="car2">
+	</bean> -->
+	
+	<!-- SPEL写法 -->
+	<!-- <bean id="person" class="cn.itcast.spring.Demo5.Person">
+		<property name="name" value="#{personInfo.showName()}"></property>
+		<property name="car2" value="#{car2}"></property>
+	</bean>
+	
+	<bean id="personInfo" class="cn.itcast.spring.Demo5.PersonInfo">
+		<property name="name" value="张三"></property>
+	</bean>
+	
+	<import resource="applicationContext2.xml"/> -->
+	
+	</bean>
+</beans>   
