@@ -6,7 +6,7 @@ package cn.itcast.spring.Demo2;
  *
  */
 public class Bean1 {
-
+	int i=0;
 	public Bean1(){
 		
 	}
