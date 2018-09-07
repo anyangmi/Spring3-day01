@@ -6,7 +6,6 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Demo6Bean的集合属性注入 -->
-	
 	<bean id="collectionBean" class="cn.itcast.spring.Demo6.CollectionBean">
 		<!-- 注入list集合 -->
 		<property name="list">
